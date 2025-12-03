@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שירותי ייעוץ זוגי ואישי מקצועיים — הננו - להתחבר מחדש</title>
+  <meta name="description" content="גלו את מגוון שירותי הייעוץ לחיבור מחדש בזוגות, פיתוח אישי וסדנאות קבוצתיות. ליווי מקצועי להחזרת הקרבה והאהבה לחיים.">
+  <meta name="keywords" content="ייעוץ לחיבור מחדש בזוגות, איך להחזיר את האהבה לזוגיות, חיבור רגשי בזוגיות, ייעוץ זוגי מקצועי">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '38ae1419-7fb3-4a02-bf47-045a1bab6d51',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/logo.webp" alt="הננו - להתחבר מחדש" class="logo" />
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      
+      <button class="phone-header-btn" aria-label="התקשר אלינו">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">השירותים שלנו</a></li>
+        <li><a href="/about">אודות</a></li>
+      </ul>
+      
+      <div class="nav-cta-container">
+        <li class="nav-cta-item">
+          <a href="/contact" class="nav-cta-btn">צור קשר</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>השירותים שלנו - ייעוץ לחיבור מחדש בזוגות ופיתוח אישי</h1>
+      <h3>מגוון שירותים מותאמים אישית להחזרת הקרבה והאהבה לחיים שלכם</h3>
+    </div>
+  </section>
+
+  <section class="services-detailed">
+    <div class="container">
+      <div class="service-block">
+        <div class="service-image">
+          <img data-placeholder="service-4" data-context="זוג בוגר יושב במעגל עם יועצת זוגית, מדברים בכנות ומחזיקים ידיים" src="assets/service-service-4.webp" alt="ייעוץ זוגי מקצועי להחזרת הקרבה והאהבה" class="service-img">
+        </div>
+        <div class="service-text">
+          <h2>ייעוץ זוגי מקצועי - איך להחזיר את האהבה לזוגיות</h2>
+          <p>הייעוץ הזוגי שלנו מיועד לזוגות שרוצים לחזק את הקשר ביניהם, לשפר תקשורת, ולהחזיר את הקרבה והאהבה למרכז החיים המשותפים. אנחנו מבינים שכל זוג הוא ייחודי, ולכן הגישה שלנו מותאמת אישית לצרכים שלכם.</p>
+          <p>במהלך המפגשים, נעבוד יחד על זיהוי דפוסי תקשורת, הבנת הצרכים הרגשיים של כל אחד מכם, ובניית כלים מעשיים ליצירת חיבור רגשי בזוגיות. נלמד איך להקשיב באמת, איך לבטא רגשות בצורה בונה, ואיך להחזיר את הקרבה שאולי התרופפה עם השנים.</p>
+          <p>הייעוץ הזוגי שלנו מתאים לזוגות בכל שלב - זוגות צעירים שרוצים לבנות בסיס חזק, זוגות שעוברים משבר או שינוי, וזוגות ותיקים שרוצים לרענן את הקשר. המטרה שלנו היא לעזור לכם לגלות מחדש את האהבה והקרבה שמחברת ביניכם.</p>
+        </div>
+      </div>
+
+      <div class="service-block reverse">
+        <div class="service-image">
+          <img data-placeholder="service-5" data-context="אישה יושבת בשיחה פנים אל פנים עם יועצת, אווירה של אמון והקשבה" src="assets/service-service-5.webp" alt="ייעוץ אישי לפיתוח חיבור רגשי עם עצמך" class="service-img">
+        </div>
+        <div class="service-text">
+          <h2>ייעוץ אישי לפיתוח עצמי - איך להחזיר קרבה ואהבה לחיים</h2>
+          <p>הייעוץ האישי שלנו מיועד לכל מי שרוצה לחזק את הקשר עם עצמו, להבין טוב יותר את הצרכים הרגשיים שלו, ולהחזיר קרבה ואהבה לחיים - גם אם כרגע לא נמצא בזוגיות. אנחנו מאמינים שהבסיס לכל קשר בריא מתחיל בקשר שלנו עם עצמנו.</p>
+          <p>במהלך התהליך האישי, נעבוד על זיהוי דפוסים רגשיים, הבנת הערכים והצרכים שלכם, ובניית כלים לפיתוח חיבור רגשי אמיתי עם עצמכם ועם האנשים הקרובים לכם. נלמד איך לטפח אהבה עצמית בריאה, איך להתמודד עם פחדים ומכשולים רגשיים, ואיך ליצור חיים מלאים בקרבה ומשמעות.</p>
+          <p>הייעוץ האישי מתאים למי שעובר שינוי בחיים, למי שמרגיש מנותק מעצמו או מהסביבה, ולמי שפשוט רוצה להמשיך לצמוח ולהתפתח. המטרה שלנו היא ללוות אתכם במסע של גילוי עצמי והחזרת האהבה והקרבה לחיים שלכם.</p>
+        </div>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image">
+          <img data-placeholder="service-6" data-context="קבוצה של זוגות יושבים במעגל בסדנה, משתפים ומקשיבים בתשומת לב" src="assets/service-service-6.webp" alt="סדנאות זוגיות וקבוצות תמיכה לחיבור מחדש" class="service-img">
+        </div>
+        <div class="service-text">
+          <h2>סדנאות וקבוצות תמיכה - למידה משותפת וחיבור קהילתי</h2>
+          <p>הסדנאות והקבוצות שלנו מציעות חוויה ייחודית של למידה משותפת, שיתוף חוויות, וחיבור עם אנשים נוספים שעוברים תהליכים דומים. זהו מרחב בטוח ותומך שבו אפשר ללמוד איך להחזיר קרבה ואהבה לחיים, בליווי מקצועי ובתמיכת הקבוצה.</p>
+          <p>הסדנאות שלנו מתמקדות בנושאים מגוונים: תקשורת זוגית, חיבור רגשי בזוגיות, פיתוח אישי, וכלים מעשיים לבניית יחסים בריאים. כל סדנה כוללת הרצאות, תרגילים מעשיים, ושיתוף קבוצתי, ומעניקה כלים שאפשר ליישם מיד בחיים היומיומיים.</p>
+          <p>הקבוצות שלנו מתאימות לזוגות ולאנשים בודדים כאחד. הן מספקות תחושה של שייכות, הבנה שאתם לא לבד במסע, ואפשרות ללמוד מהניסיון של אחרים. המטרה שלנו היא ליצור קהילה תומכת שבה כל אחד יכול לצמוח ולהתפתח.</p>
+        </div>
+      </div>
+
+      <div class="service-block reverse">
+        <div class="service-image">
+          <img data-placeholder="service-7" data-context="זוג צעיר משתתף בפגישת ייעוץ אונליין דרך מחשב נייד, יושבים יחד בבית" src="assets/service-service-7.webp" alt="ייעוץ זוגי ואישי אונליין מכל מקום" class="service-img">
+        </div>
+        <div class="service-text">
+          <h2>ייעוץ אונליין - נגישות ונוחות מכל מקום</h2>
+          <p>אנחנו מבינים שלא תמיד קל להגיע פיזית למפגשים, ולכן אנחנו מציעים גם שירותי ייעוץ אונליין באיכות גבוהה. הייעוץ האונליין שלנו מאפשר לכם לקבל את אותו הליווי המקצועי והאישי, בנוחות של הבית שלכם או מכל מקום שנוח לכם.</p>
+          <p>המפגשים האונליין מתנהלים באמצעות פלטפורמות וידאו מאובטחות, ומספקים את אותה רמת קרבה וחיבור כמו מפגשים פנים אל פנים. אנחנו דואגים ליצור מרחב בטוח ושקט גם בסביבה הדיגיטלית, כך שתוכלו להרגיש בנוח לשתף ולעבוד על הנושאים החשובים לכם.</p>
+          <p>הייעוץ האונליין מתאים במיוחד למי שגר רחוק, למי שיש לו לוח זמנים עמוס, או למי שפשוט מעדיף את הנוחות של פגישה מרחוק. זו דרך מצוינת להחזיר את הקרבה והאהבה לחיים, בלי להתפשר על איכות הליווי.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="container">
+      <h2>איך התהליך עובד? המסלול שלכם לחיבור מחדש</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>פגישת היכרות ראשונית</h3>
+          <p>נתחיל בשיחה ראשונית שבה נכיר אתכם, נבין את הצרכים והמטרות שלכם, ונבנה תוכנית ליווי מותאמת אישית. זה הזמן לשאול שאלות ולהבין אם אנחנו מתאימים לכם.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>בניית תוכנית אישית</h3>
+          <p>נבנה יחד תוכנית עבודה שמתאימה לכם - תדירות המפגשים, נושאים שנעבוד עליהם, ומטרות ברורות. כל תוכנית מותאמת לקצב שלכם ולצרכים הייחודיים שלכם.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>ליווי מתמשך והתקדמות</h3>
+          <p>נתחיל את המפגשים הקבועים, נעבוד על הנושאים שחשובים לכם, ונבנה כלים מעשיים. נעקוב אחרי ההתקדמות שלכם ונתאים את התהליך לפי הצורך.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>שינוי אמיתי ומתמשך</h3>
+          <p>המטרה שלנו היא לא רק לפתור בעיות זמניות, אלא ליצור שינוי אמיתי ומתמשך בחיים שלכם. נוודא שאתם יוצאים עם כלים שתוכלו להמשיך להשתמש בהם גם לאחר סיום התהליך.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>מוכנים להתחיל את המסע להחזרת הקרבה והאהבה?</h2>
+        <p>בואו נדבר ונבין יחד איזה שירות הכי מתאים לכם. פגישת ההיכרות הראשונית היא ללא התחייבות, ומאפשרת לכם להכיר אותנו ולהחליט אם זה מרגיש נכון.</p>
+        <a href="/contact" class="btn-primary">קבעו פגישת היכרות</a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 הננו - להתחבר מחדש. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '38ae1419-7fb3-4a02-bf47-045a1bab6d51';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>
